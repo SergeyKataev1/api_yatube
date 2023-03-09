@@ -3,6 +3,7 @@ from rest_framework import serializers
 
 
 class CommentSerializer(serializers.ModelSerializer):
+    '''Сериализатор модели комментариев.'''
     author = serializers.SlugRelatedField(
         read_only=True, slug_field='username'
     )
@@ -16,6 +17,7 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class GroupSerializer(serializers.ModelSerializer):
+    '''Сериализатор модели групп.'''
 
     class Meta:
         model = Group
@@ -23,6 +25,7 @@ class GroupSerializer(serializers.ModelSerializer):
 
 
 class PostSerializer(serializers.ModelSerializer):
+    '''Сериализатор модели постов.'''
     author = serializers.SlugRelatedField(
         read_only=True, slug_field='username'
     )
